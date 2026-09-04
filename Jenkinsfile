@@ -3,7 +3,7 @@ pipeline {
  
   environment {
     APK_PATH = 'android/app/build/outputs/apk/release/app-release.apk'
-    JAVA_HOME= '/usr/lib/jvm/java-21.0.11 -openjdk-amd64'
+    JAVA_HOME= '/usr/lib/jvm/java-21.0.11-openjdk-amd64'
  
   }
  
