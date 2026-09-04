@@ -33,7 +33,6 @@ pipeline {
         sh '''
           cd android &&
           chmod +x gradlew &&
-          ./gradlew wrapper --gradlew-version 8.9 &&
           ./gradlew assembleRelease --build-cache --no-daemon 
         '''
       }
