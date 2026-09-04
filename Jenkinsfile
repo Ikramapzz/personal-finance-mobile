@@ -33,6 +33,7 @@ pipeline {
         sh '''
           cd android &&
           chmod +x gradlew &&
+          sed -i "s|distributionUrl=.*|distributionUrl=https\\\\://services.gradle.org/distributions/gradle-8.13-bin.zip|" gradle/wrapper/gradle-wrapper.properties &&
           ./gradlew assembleRelease --build-cache --no-daemon 
         '''
       }
