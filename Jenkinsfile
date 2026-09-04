@@ -4,6 +4,7 @@ pipeline {
   environment {
     APK_PATH = 'android/app/build/outputs/apk/release/app-release.apk'
     JAVA_HOME= '/usr/lib/jvm/java-21-openjdk-amd64'
+    ANDROID_HOME = '/home/kiaq-lap-114/android-sdk'
  
   }
  
@@ -32,6 +33,7 @@ pipeline {
       steps {
         sh '''
           cd android &&
+          echo "sdk.dir=${ANDROID_HOME}" > local.properties &&
           chmod +x gradlew &&
           sed -i "s|distributionUrl=.*|distributionUrl=https\\\\://services.gradle.org/distributions/gradle-8.13-bin.zip|" gradle/wrapper/gradle-wrapper.properties &&
           ./gradlew assembleRelease --build-cache --no-daemon 
